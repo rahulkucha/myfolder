@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>SignUp</title>
+<style>
+div 
+{
+  border-radius: 5px;
+  background-color: lightgrey;
+  padding: 20px;
+}
+.c1
+{
+	background-color: #f1f1f1;
+}
+</style>
+
+<script>
+function validatesForm() 
+{
+  var x = document.forms["myform"]["firstname"].value;
+  if (x == "") 
+  {
+    alert("Firstname must be filled out");
+    return false;
+  }
+
+  var y = document.forms["myform"]["lastname"].value;
+  if (y == "") 
+  {
+    alert("Lastname must be filled out");
+    return false;
+  }
+
+  var z, text;
+
+  z = document.forms["myform"]["contact"].value;
+
+  if (isNaN(z) || z > 1 || z <= 10) 
+  {
+    alert("Contact Invalid");
+    return false;
+  } 
+}
+
+
+</script>
+</head>
+
+<body>
+<div>
+	<h1>Registration</h1>
+	<hr><br>
+<form name="myform" onsubmit="return validatesForm()" method="post">
+  First name :<br>
+  <input type="text" name="firstname" value="" placeholder="eg : Abc">
+  <br><br>
+  Last name :<br>
+  <input type="text" name="lastname" value="" placeholder="eg : Xyz">
+  <br><br>
+  <p>Select Gender : </p>
+  <input type="radio" name="gender" value="male" checked> Male <br>
+  <input type="radio" name="gender" value="female"> Female <br>
+  <input type="radio" name="gender" value="other"> Other <br>
+
+<br>
+<p>Select Nationality : 
+<select name="Nation">
+  <option value="India">India</option>
+  <option value="USA">USA</option>
+  <option value="UK">UK</option>
+  <option value="Australia">Australia</option>
+</select></p>
+
+<br>
+Date of Birth:<br>
+  <input type="date" name="dob" value=" ">
+
+<br><br>
+Contact:<br>
+  <input type="numb" name="contact" value=" " >
+
+<br><br>
+Email-ID:<br>
+  <input type="text" name="mail" value=" ">
+
+<br><br>
+  <input class="c1" type="submit" value="Submit">
+</form>
+</div>
+
+</body>
+</html>
